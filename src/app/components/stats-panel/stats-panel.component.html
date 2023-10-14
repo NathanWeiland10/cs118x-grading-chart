@@ -1,0 +1,32 @@
+<div *ngIf="show" class="show">
+  <h1>{{graphTitle}}</h1>
+  <div class="container">
+    <div class="graph-container">
+      <div class="bar-graph">
+        <p-chart type="bar" [data]="letterDistData" [options]="letterDistOptions"></p-chart>
+      </div>
+    </div>
+    <div class="stats-holder">
+      <h2>Statistics</h2>
+      <h4>Average: <span class="average-grade" [ngStyle]="{color: color}">{{average | number : '1.2-2'}}
+        % {{getLetterGrade(average)}}</span></h4>
+      <p>Total Grades: {{grades.length}}</p>
+      <p>A: {{letterGrades[0]}} / {{grades.length}} ({{letterGrades[0] / grades.length * 100 | number : '1.0-0'}}%)</p>
+      <p>B: {{letterGrades[1]}} / {{grades.length}} ({{letterGrades[1] / grades.length * 100 | number : '1.0-0'}}%)</p>
+      <p>C: {{letterGrades[2]}} / {{grades.length}} ({{letterGrades[2] / grades.length * 100 | number : '1.0-0'}}%)</p>
+      <p>D: {{letterGrades[3]}} / {{grades.length}} ({{letterGrades[3] / grades.length * 100 | number : '1.0-0'}}%)</p>
+      <p>F: {{letterGrades[4]}} / {{grades.length}} ({{letterGrades[4] / grades.length * 100 | number : '1.0-0'}}%)</p>
+      <p>Median: {{median | number : '1.2-2'}}% {{getLetterGrade(median)}}</p>
+      <p>Standard Deviation: {{standardDeviation | number : '1.2-2'}}</p>
+      <p>No Submit or Zero: {{[zeroes]}}</p>
+    </div>
+  </div>
+  <div class="line-graph">
+    <p-chart type="line" [data]="allGradesData" [options]="allGradesOptions"></p-chart>
+  </div>
+</div>
+<ng-particles *ngIf="!show" [options]="particlesOptions" [particlesInit]="particlesInit"></ng-particles>
+<div *ngIf="!show" class="show-button">
+  <p-button label="Show Results" (onClick)="showResults()" styleClass="p-button-outlined"></p-button>
+</div>
+

@@ -1,0 +1,72 @@
+.show {
+  border: 1px solid #ebedef;
+  margin: 1rem;
+}
+
+.container {
+  margin-top: 19px;
+  display: flex;
+  border-bottom: 1px solid #ebedef;
+}
+
+.graph-container {
+  width: 65%;
+}
+
+.bar-graph {
+  border-right: 1px solid #ebedef;
+}
+
+.line-graph {
+  margin-top: 1rem;
+}
+
+.stats-holder {
+  margin-left: 2.5vw;
+  font-size: 1.3vw;
+}
+
+.show-button {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+::ng-deep .p-button {
+  font-size: 5rem;
+  background-color: #121212 !important;
+}
+
+p {
+  margin-top: 1vw;
+  margin-bottom: 1vw;
+}
+
+h1 {
+  margin-left: 1rem;
+  font-size: 2vw;
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: .5rem;
+}
+
+@media (max-width: 950px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    border-bottom: none;
+  }
+  .graph-container {
+    width: 95%;
+  }
+  .stats-holder {
+    margin-left: 2.5vw;
+    font-size: 3vw;
+  }
+  .bar-graph {
+    border-right: none;
+  }
+}
