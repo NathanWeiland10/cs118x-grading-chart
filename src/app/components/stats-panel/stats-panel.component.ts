@@ -10,7 +10,7 @@ import {loadSlim} from 'tsparticles-slim';
   styleUrls: ['./stats-panel.component.scss']
 })
 export class StatsPanelComponent {
-  graphTitle = 'Project #1 Grades';
+  graphTitle = 'Project #2 Grades';
   grades: number[] = GRADE_LIST;
   letterGrades: number[] = [0, 0, 0, 0, 0];
   sortedGrades: number[] = [];
